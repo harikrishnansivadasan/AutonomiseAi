@@ -1,0 +1,7 @@
+fitz
+PyMuPDF
+easyocr
+pandas
+streamlit
+python-dotenv
+groq

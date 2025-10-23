@@ -1,6 +1,5 @@
 # To ignore the autonomize directory (virtual environment)
 autonomize/
-.env
 .venv
 
 # To ignore Jupyter Notebook checkpoints
@@ -10,6 +9,7 @@ autonomize/
 __pycache__/
 *.pyc
 
-# To ignore environment files
+# Environment vars
+.env
 
 
