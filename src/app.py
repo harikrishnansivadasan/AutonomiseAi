@@ -85,12 +85,9 @@ if uploaded_files:
     # Generate per-file summaries
 
     for file_path, text in st.session_state.results.items():
-        try:
-            if not text.strip():
-                st.error(f"❌ No text extracted from {file_path}")
-                continue
-        except Exception as e:
 
+        if not text.strip():
+            st.error(f"❌ No text extracted from {file_path}")
             continue
 
         st.subheader(f"📄 {file_path}")

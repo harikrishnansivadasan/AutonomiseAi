@@ -46,16 +46,19 @@ def extract_text_from_structured_file(file_path):
     ext = ext.lower()
 
     if ext == ".csv":
-        return pd.read_csv(file_path)
+        df = pd.read_csv(file_path)
     elif ext in [".xls", ".xlsx"]:
-        return pd.read_excel(file_path)
+        df = pd.read_excel(file_path)
     elif ext == ".json":
         try:
-            return pd.read_json(file_path)
+            df = pd.read_json(file_path)
         except ValueError:
             with open(file_path, "r") as file:
                 data = json.load(file)
-            return pd.json_normalize(data)
+            df = pd.json_normalize(data)
+    df = df.describe()
+    df = df.to_string(index=False)
+    return df
 
 
 def extract_text_from_image(file_path):
